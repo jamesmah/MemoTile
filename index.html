@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MemoTile</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link href='https://fonts.googleapis.com/css?family=Bungee+Inline' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div id="wrapper">
+    <section id="left-section">
+      <div id="menu-button">
+        <img src="images/gear1.png">
+      </div>
+      <div id="score-red">
+        0
+      </div>
+      <div id="score-blue">
+        0
+      </div>
+      <img id="crown" src="images/crown.svg">
+    </section>
+    <section id="middle-section">
+      <div id="game-board"></div>
+      <div id="switch-turn"><span>Blue's turn</span></div>
+      <div id="win-page">
+        <div id="win-display">Winner!</div>
+        <div id="play-button">Play</div>
+        <div id="clicktostart">Click to start</div>
+      </div>
+      <div id="menu-page">
+        <div id="game-title">Memotile</div>
+        <div id="character-select">
+          <div id="redchar-select">
+            <div><img src="images/red0.svg"></div>
+            <div><img src="images/red1.svg"></div>
+            <div><img src="images/red2.svg"></div>
+            <div><img src="images/red3.svg"></div>
+            <div><img src="images/red4.svg"></div>
+            <div><img src="images/red5.svg"></div>
+            <div><img src="images/red6.svg"></div>
+            <div><img src="images/red7.svg"></div>
+            <div><img src="images/red8.svg"></div>
+          </div>
+          <div id="bluechar-select">
+            <div><img src="images/blue0.svg"></div>
+            <div><img src="images/blue1.svg"></div>
+            <div><img src="images/blue2.svg"></div>
+            <div><img src="images/blue3.svg"></div>
+            <div><img src="images/blue4.svg"></div>
+            <div><img src="images/blue5.svg"></div>
+            <div><img src="images/blue6.svg"></div>
+            <div><img src="images/blue7.svg"></div>
+            <div><img src="images/blue8.svg"></div>
+          </div>
+        </div>
+        <div id="gamemode-select">
+          <div id="gamemode1">
+            <span>9</span>
+            <img src="images/grid1.png"></div>
+          <div id="gamemode2">
+            <span>16</span>
+            <img src="images/grid2.png"></div>
+          <div id="gamemode3">
+            <span>25</span>
+            <img src="images/grid3.png"></div>
+        </div>
+      </div>
+
+    </section>
+
+    
+    <section id="right-section">
+      <div id="tilesleft-red">
+      </div>
+      <div id="tilesleft-blue">
+      </div>
+    </section>
+
+  </div>
+  <section id="volumecontrol">Use number keys to control volume</section>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script type="text/javascript" src="memotile.js"></script>
+  <script type="text/javascript" src="menupage.js"></script>
+</body>
+<audio>
+  <source src="battlesong.mp3" type="audio/mpeg">
+  <script>
+    var music = document.getElementsByTagName("audio")[0];
+    music.volume = 0.1;
+    music.loop = true;
+  </script>
+</audio>
