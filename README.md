@@ -1,8 +1,6 @@
 # MemoTile
 [https://jamesmah.github.io/MemoTile/](https://jamesmah.github.io/MemoTile/)
 
----
-
 ###Goal
 A two player game which allows for customisable tokens and board size.
 I picked a tile based game system that was simpler than checkers
