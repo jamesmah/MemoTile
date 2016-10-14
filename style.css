@@ -8,7 +8,7 @@ body {
 }
 #wrapper {
   /*margin: auto;*/
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   /*display: flex;*/
   /*flex-flow: row;*/
@@ -41,7 +41,8 @@ section {
   }
   #left-section, #right-section {
     /*width: auto;*/
-    width: calc( (100vw - (100vw * 5 / 8)) *.5 );
+    width: calc( (100vw - (100vw * 5 / 8)) / 2 );
+    /*width: 18.75vw;*/
     height: calc(100vw * 5 / 8);
   }
   #middle-section {

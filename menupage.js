@@ -180,7 +180,6 @@ function onClickGame() {
   }
 }
 
-
 // MENU BUTTON
 $('#menu-button').click(function() {
   if ( $('#menu-page').css('display') === 'none') {
@@ -201,7 +200,6 @@ $('#menu-button').hover(function() {
 });
 
 
-
 // SWITCH TURN BUTTON
 // $('#switch-turn').click(function() {
 //   $('#switch-turn').hide();
@@ -210,22 +208,9 @@ $('#menu-button').hover(function() {
 
 // $('#left-section, #right-section').click(function() {
 //   if (game.turn !== 0 && $('#menu-page').css('display') === 'block'){
-//   // if (game.turn !== 0){
 //     $('#menu-page').fadeOut();
 //   }
 // });
-
-
-
-// change mouse to pokemouse
-
-    // $("div").slideDown(400);
-
-
-    //background is pokemon theme
-
-    //if i click outside the menu it quits
-
 
 var body = document.querySelector('body');
 

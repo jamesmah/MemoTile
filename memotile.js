@@ -93,7 +93,7 @@ function initGame() {
     else {
       $('body').css('cursor', 'url(images/mouse2.png), auto');
     }
-    // $('#game-board > div').css('background-color','inherit') ;
+    $('#game-board > div').css('background-color','inherit') ;
     $('#game-board > div').find('img').fadeOut(400);
   }, grid.length * grid.length * grid.length * 20);
   setTimeout(function() {
@@ -269,13 +269,13 @@ function initGameBoardButtons() {
 function switchTurn() {
   if (game.turn === 1) {game.turn ++;}
   else {game.turn = 1;}
-  console.log(players[game.turn].color + "'s turn.");
+  // console.log(players[game.turn].color + "'s turn.");
 }
 
 function checkWinner() {
   for (var i = 1; i <= 2; i++) {
     if (players[i].score === players[i].maxScore) {
-      console.log("the winner is " + players[i].color);
+      // console.log("the winner is " + players[i].color);
       tally[players[i].color]++;
       printTally(players[i].color);
       $('#win-display').fadeIn().text(players[i].color + ' WINS!');
@@ -384,14 +384,14 @@ function displayScoreTiles() {
   }
 
   for (var i = players[redPlayer].maxScore; i > players[redPlayer].score; i--) {
-    console.log('hi');
+    // console.log('hi');
     var $newImg = $('<img>');
     $newImg.attr("src","images/red" + shapeRed + ".svg");
     $('#tilesleft-red').append($newImg);
   }
 
   for (var j = players[bluePlayer].maxScore; j > players[bluePlayer].score; j--) {
-    console.log('hi');
+    // console.log('hi');
     var $newImg2 = $('<img>');
     $newImg2.attr("src","images/blue" + shapeBlue + ".svg");
     $('#tilesleft-blue').append($newImg2);
@@ -419,14 +419,14 @@ function displayScoreTilesNoEffect() {
   }
 
   for (var i = players[redPlayer].maxScore; i > players[redPlayer].score; i--) {
-    console.log('hi');
+    // console.log('hi');
     var $newImg = $('<img>');
     $newImg.attr("src","images/red" + shapeRed + ".svg");
     $('#tilesleft-red').append($newImg);
   }
 
   for (var j = players[bluePlayer].maxScore; j > players[bluePlayer].score; j--) {
-    console.log('hi');
+    // console.log('hi');
     var $newImg2 = $('<img>');
     $newImg2.attr("src","images/blue" + shapeBlue + ".svg");
     $('#tilesleft-blue').append($newImg2);
@@ -437,54 +437,6 @@ function displayScoreTilesNoEffect() {
   // $('#tilesleft-blue img').fadeIn();
 }
 
-// function displayScoreTilesBlue() {
-//   $('#tilesleft-blue img').remove();
-//   // console.log('byt');
 
-//   var redPlayer;
-//   var bluePlayer;
-//   if (players[1].color === 'red') {
-//     redPlayer = 1;
-//     bluePlayer = 2;
-//   }
-//   else {
-//     redPlayer = 2;
-//     bluePlayer = 1;
-//   }
 
-//   for (var j = players[bluePlayer].maxScore; j > players[bluePlayer].score; j--) {
-//     console.log('hi');
-//     var $newImg2 = $('<img>');
-//     $newImg2.attr("src","images/blue" + shapeBlue + ".svg");
-//     $('#tilesleft-blue').append($newImg2);
-//   }
-//   // $('#tilesleft-blue img').hide();
-//   // $('#tilesleft-blue img').fadeIn();
-// }
-
-// function displayScoreTilesRed() {
-//   $('#tilesleft-red img').remove();
-//   // console.log('byt');
-
-//   var redPlayer;
-//   var bluePlayer;
-//   if (players[1].color === 'red') {
-//     redPlayer = 1;
-//     bluePlayer = 2;
-//   }
-//   else {
-//     redPlayer = 2;
-//     bluePlayer = 1;
-//   }
-
-//   for (var i = players[redPlayer].maxScore; i > players[redPlayer].score; i--) {
-//     console.log('hi');
-//     var $newImg = $('<img>');
-//     $newImg.attr("src","images/red" + shapeRed + ".svg");
-//     $('#tilesleft-red').append($newImg);
-//   }
-
-//   // $('#tilesleft-red img').hide();
-//   // $('#tilesleft-red img').fadeIn();
-// }
 
