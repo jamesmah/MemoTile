@@ -1,11 +1,6 @@
 # MemoTile
 [https://jamesmah.github.io/MemoTile/](https://jamesmah.github.io/MemoTile/)
 
-###Instructions
-A readme.md file with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-
----
-
 ###Goal
 A two player game which allows for customisable tokens and board size.
 I picked a tile based game system that was simpler than checkers
