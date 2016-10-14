@@ -16,7 +16,7 @@ HTML, CSS, Javascript, jQuery (& jQuery effects!)
 
 ###Approach taken:
 1. Built html document with 
-2. Built the layout first (lots of divs, responsive) [(reponsive website ref)](http://games.cdn.famobi.com/html5games/0/1010-animals/7-2161a5/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=6f19250d-f8f8-4bf0-9edc-b28ef81a86ec&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=110#_ga=1.189308334.447018087.1476148857)
+2. Built the layout first (lots of divs, responsive) ([reponsive website ref](http://games.cdn.famobi.com/html5games/0/1010-animals/7-2161a5/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=6f19250d-f8f8-4bf0-9edc-b28ef81a86ec&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=110#_ga=1.189308334.447018087.1476148857))
   * Used square images, coloured divs
   * Just a rough placement of divs and containers
   * Used 3 media queries for 4 different aspect ratio ranges
