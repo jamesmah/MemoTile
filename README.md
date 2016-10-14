@@ -10,6 +10,7 @@ A readme.md file with explanations of the technologies used, the approach taken,
 A two player game which allows for customisable tokens and board size.
 I picked a tile based game system that was simpler than checkers
 but different from tictactoe and would make more sense to scale the grid size.
+I was interested in getting a better understanding of jQuery for DOM manipulation and effects.
 
 ---
 
