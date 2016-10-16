@@ -1,22 +1,3 @@
-var body = document.querySelector('body');
-
-// On key press, perform this function
-body.onkeydown = function (e) {
-  if ( !e.metaKey ) {
-    e.preventDefault();
-  }
-  var music = document.getElementsByTagName("audio")[0];
-  if (e.keyCode > 48 && e.keyCode<=57) {
-      music.volume = (e.keyCode - 48) / 10;
-      music.play();
-      music.loop = true;
-  }
-  else if (e.keyCode === 48 ) {
-      music.pause();
-      music.currentTime = 0;
-  }
-};
-
 var game = {start: false,
             turnColorId: 0,
             otherColorId: 1,
@@ -182,11 +163,6 @@ function initArray(gridSize, pStart, pOther, pOtherMax) {
 }
 
 
-// $.each(players, function(i, player) {
-
-// });
-
-
 $('.gridsize').hover(function() {
   $(this).find('img').fadeIn(200);
 }, function() {
@@ -269,8 +245,7 @@ function displayScore(colorId, score) {
 
 
 // DISPLAY MENU // DISPLAY MENU // DISPLAY MENU 
-$('.characters img').click(onClickCharacter);
-function onClickCharacter() {
+$('.characters img').click(function () {
   var colorId = $('.characters').index($(event.target).closest('.characters'));
   var tileNumber = $('#characters-' + players[colorId].color + ' > img').index($(event.target));
 
@@ -283,7 +258,7 @@ function onClickCharacter() {
     updateCharImg(colorId);
     // console.log(colorId);
   }
-}
+});
 
 
 $('.characters').hover(function() {
@@ -296,9 +271,7 @@ $('.characters').hover(function() {
 });
 
 
-$('.gridsize').click(onClickGridSize);
-
-function onClickGridSize() {
+$('.gridsize').click(function() {
   randTurnStart();
   $('html').css('cursor', 'url(images/mouse-' + players[game.turnColorId].color + '.png), auto');
 
@@ -311,7 +284,7 @@ function onClickGridSize() {
   $('#player-wins').text('');
   placeGridTiles(grid.array, grid.length, null);
   newGame();
-}
+});
 
 //update to new charImg without effects
 function updateCharImg(colorId) {
