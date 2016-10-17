@@ -94,7 +94,7 @@ h2#player-wins {
   top: 17%;
   font-size: 7vh;
 }
-h2#clicktostart {
+h2#clickheretostart {
   top: 65%;
   font-size: 5vh;
   padding: 2%;
@@ -280,7 +280,7 @@ div.tilesleft > img {
   h2#player-turn, h2#player-start, h1#game-title,
   div.gridsize > div, div.score {font-size: calc(10vw * 5 / 8);}
   h2#player-wins {font-size: calc(7vw * 5 / 8);}
-  h2#clicktostart {font-size: calc(5vw * 5 / 8);}
+  h2#clickheretostart {font-size: calc(5vw * 5 / 8);}
   div.select > div {border-width: calc(1vw * 5 / 8);}
   div.score {right: calc(5.5vw * 5 / 8);}
   div.tilesleft > img {width: calc(8vw * 5 / 8);}
@@ -289,14 +289,14 @@ div.tilesleft > img {
   h2#player-turn, h2#player-start, h1#game-title,
   div.gridsize > div, div.score {font-size: calc(10vh * 5 / 8);}
   h2#player-wins {font-size: calc(7vh * 5 / 8);}
-  h2#clicktostart {font-size: calc(5vh * 5 / 8);}
+  h2#clickheretostart {font-size: calc(5vh * 5 / 8);}
   div.select > div {border-width: calc(1vh * 5 / 8);}
 }
 @media screen and (max-aspect-ratio: 5/8) {
   h2#player-turn, h2#player-start, h1#game-title,
   div.gridsize > div, div.score {font-size: 10vw;}
   h2#player-wins {font-size: 7vw;}
-  h2#clicktostart {font-size: 5vw;}
+  h2#clickheretostart {font-size: 5vw;}
   div.select > div {border-width: 1vw;}
 }
 

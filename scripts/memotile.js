@@ -3,7 +3,7 @@ var timeOuts = []; // Keep track of the timeOuts used for effects
 
  // Game information
 var game = {firstRound: true, // First time chosing a grid size
-            start: false, // Has the current round started
+            enableWinDisplay: false, // Prevent player from accidentally starting next round too quickly
             turnColorId: 0, // Current player turn
             otherColorId: 1,
             pStartColorId: 0, // Player who started the round
@@ -51,21 +51,25 @@ $('.gridsize').hover(function() {
 });
 
 // Generate and display board after clicking on start screen
-$('#display-win').click(function() {
-  game.start = true;
-  $('#display-win').fadeOut(); // Hide start screen
-  placeGridTiles(grid.array, grid.length, players);
-  $('.tilesleft > img').remove();
-  displayTilesLeft(players[0]);
-  displayTilesLeft(players[1]);
-  $('#display-grid > div > img, .tilesleft').hide().fadeIn();
-  setTimeout(function() {
-    $('#display-grid > div > img').fadeOut();
-  }, grid.length * grid.length * grid.length * 20 + 100);
-  setTimeout(function() {
-    $('#display-grid > div').addClass('hover-' + players[game.pStartColorId].color);
-    initGridButtons();
-  }, grid.length * grid.length * grid.length * 20 + 700);
+$('#clickheretostart').click(function() {
+  if (game.enableWinDisplay) {
+    game.enableWinDisplay = false;
+    $('#display-win').fadeOut(); // Hide start screen
+    grid.opened = [];
+    grid.array = initArray(game.pStartColorId, game.pNextColorId, players[game.otherColorId].tilesMax);
+    placeGridTiles(grid.array, grid.length, players);
+    $('.tilesleft > img').remove();
+    displayTilesLeft(players[0]);
+    displayTilesLeft(players[1]);
+    $('#display-grid > div > img, .tilesleft').hide().fadeIn();
+    setTimeout(function() {
+      $('#display-grid > div > img').fadeOut();
+    }, grid.length * grid.length * grid.length * 20 + 100);
+    setTimeout(function() {
+      $('#display-grid > div').addClass('hover-' + players[game.pStartColorId].color);
+      initGridButtons();
+    }, grid.length * grid.length * grid.length * 20 + 700); 
+  }
 });
 
 // Open and close menu
@@ -105,7 +109,6 @@ $('.gridsize').click(function() {
   placeGridTiles(grid.array, grid.length, null);
   newGame();
   game.firstRound = false;
-  game.start = false;
 });
 
 // Place a random starting player for a new game mode
@@ -129,13 +132,18 @@ function initTilesMax() {
 
 // Initialise new game, show starting screen
 function newGame() {
-  $('#display-win').fadeOut();
+  $('#display-win').fadeOut(200);
+  $('#clickheretostart').removeClass('hover-scale-120');
   initTilesMax();
-  grid.array = initArray(game.pStartColorId, game.pNextColorId, players[game.otherColorId].tilesMax);
-  grid.opened = [];
-  $('#player-start').text(players[game.pStartColorId].color.toUpperCase() + ' START');
-  $('#player-start').css('color',players[game.pStartColorId].color);
-  $('#display-win').fadeIn();
+  setTimeout(function(){
+    $('#player-start').text(players[game.pStartColorId].color.toUpperCase() + ' START');
+    $('#player-start').css('color', players[game.pStartColorId].color);
+    $('#display-win').fadeIn();
+  }, 200);
+  setTimeout(function(){
+    game.enableWinDisplay = true;
+    $('#clickheretostart').addClass('hover-scale-120');
+  }, 600);
 }
 
 function initGridButtons() {
@@ -222,6 +230,7 @@ function placeGridTiles(array, gridLength, players) {
   $('#display-grid > div').remove();
   for(var i = 0; i < grid.size; i++){
     var $newTileDiv = $('<div><img></div>');
+    $newTileDiv.find('img').hide();
     if (players !== null) {
       $newTileDiv.find('img').attr("src","./images/" + players[array[i]].color + players[array[i]].character + ".svg");
     }
@@ -274,16 +283,14 @@ function displayScore(colorId, score) {
 
 //update to new charImg without effects
 function updateCharImg(colorId) {
-  if (game.start) {
-    // colorId is 0(red) or 1(blue)
-    // Update right aside imgs
-    $('.tilesleft:eq(' + colorId + ') > img').attr('src','./images/' + players[colorId].color + players[colorId].character + '.svg');
+  // colorId is 0(red) or 1(blue)
+  // Update right aside imgs
+  $('.tilesleft:eq(' + colorId + ') > img').attr('src','./images/' + players[colorId].color + players[colorId].character + '.svg');
 
-    // Update display grid images
-    for(var i = 0; i < grid.size; i++){
-      if ( grid.array[i] === colorId) {
-        $( '#display-grid img:eq(' + i + ')' ).attr("src","./images/" + players[colorId].color + players[colorId].character + ".svg");
-      }
+  // Update display grid images
+  for(var i = 0; i < grid.size; i++){
+    if ( grid.array[i] === colorId) {
+      $( '#display-grid img:eq(' + i + ')' ).attr("src","./images/" + players[colorId].color + players[colorId].character + ".svg");
     }
   }
 }
