@@ -51,7 +51,7 @@ $('.gridsize').hover(function() {
 });
 
 // Generate and display board after clicking on start screen
-$('#clickheretostart').click(function() {
+$('#display-win').click(function() {
   if (game.enableWinDisplay) {
     game.enableWinDisplay = false;
     $('#display-win').fadeOut(); // Hide start screen
@@ -133,7 +133,7 @@ function initTilesMax() {
 // Initialise new game, show starting screen
 function newGame() {
   $('#display-win').fadeOut(200);
-  $('#clickheretostart').removeClass('hover-scale-120');
+  $('#clicktostart').removeClass('hover-scale-120');
   initTilesMax();
   setTimeout(function(){
     $('#player-start').text(players[game.pStartColorId].color.toUpperCase() + ' START');
@@ -142,7 +142,7 @@ function newGame() {
   }, 200);
   setTimeout(function(){
     game.enableWinDisplay = true;
-    $('#clickheretostart').addClass('hover-scale-120');
+    $('#clicktostart').addClass('hover-scale-120');
   }, 600);
 }
 
