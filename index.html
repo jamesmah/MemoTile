@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>MemoTile</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/style.css">
   <link rel="icon" type="image/png" href="./images/icon.png">
   <link href='https://fonts.googleapis.com/css?family=Bungee+Inline' rel='stylesheet' type='text/css'>
 </head>
@@ -69,8 +69,8 @@
       </div>
     </section>
     <aside id="right">
-      <div class="tilesleft" id="tilesleft-red"></div>
-      <div class="tilesleft" id="tilesleft-blue"></div>
+      <div class="tilestogo" id="tilestogo-red"></div>
+      <div class="tilestogo" id="tilestogo-blue"></div>
     </aside>
   </div>
   <div id="volume-control">Use number keys to control volume</div>
@@ -79,7 +79,7 @@
   <script type="text/javascript" src="scripts/memotile.js"></script>
 </body>
 <audio>
-  <source src="./audio.mp3" type="audio/mpeg">
+  <source src="./audio/audio.mp3" type="audio/mpeg">
   <script>
     var music = document.getElementsByTagName("audio")[0];
     music.volume = 0.1;

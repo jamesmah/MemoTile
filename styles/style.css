@@ -1,12 +1,12 @@
 /*MAIN WEBSITE LAYOUT*/
 html {
-  cursor: url('./images/mouse-red.png'), auto;
+  cursor: url('../images/mouse-red.png'), auto;
 }
 body {
   margin: auto;
   text-align: center;
   height: 100%;
-  background-image: url('./images/background.jpg');
+  background-image: url('../images/background.jpg');
   background-size: auto 100vh;
   font-family: 'Bungee Inline';
 }
@@ -232,44 +232,44 @@ div#score-blue {
 }
 
 /*ASIDE RIGHT*/
-div.tilesleft {
+div.tilestogo {
   position: absolute;
   left: 0;
   height: 40%;
   display: flex;
   flex-wrap: wrap;
 }
-div#tilesleft-red {
+div#tilestogo-red {
   bottom: 50.5%;
   flex-direction: column-reverse;
 }
-div#tilesleft-blue {
+div#tilestogo-blue {
   top: 50.5%;
   flex-direction: column;
 }
-div.tilesleft > img {
+div.tilestogo > img {
   height: 20%;
   width: 8vh;
 }
 @media screen and (max-aspect-ratio: 1/1) {
   /*RIGHT ASIDE*/
-  div.tilesleft {
+  div.tilestogo {
     left: auto;
     top: 0;
     height: auto;
     width: 40%;
   }
-  div#tilesleft-red {
+  div#tilestogo-red {
     bottom: auto;
     right: 50.5%;
     flex-direction: row-reverse;
   }
-  div#tilesleft-blue {
+  div#tilestogo-blue {
     top: 0;
     left: 50.5%;
     flex-direction: row;
   }
-  div.tilesleft > img {
+  div.tilestogo > img {
     width: 20%;
     /*height: 8vw;*/
   }
@@ -283,7 +283,7 @@ div.tilesleft > img {
   h2#clicktostart {font-size: calc(5vw * 5 / 8);}
   div.select > div {border-width: calc(1vw * 5 / 8);}
   div.score {right: calc(5.5vw * 5 / 8);}
-  div.tilesleft > img {width: calc(8vw * 5 / 8);}
+  div.tilestogo > img {width: calc(8vw * 5 / 8);}
 }
 @media screen and (max-aspect-ratio: 1/1)  and (min-aspect-ratio: 5/8){
   h2#player-turn, h2#player-start, h1#game-title,

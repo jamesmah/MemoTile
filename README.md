@@ -1,6 +1,26 @@
 # MemoTile
 [https://jamesmah.github.io/MemoTile/](https://jamesmah.github.io/MemoTile/)
 
+---
+
+---
+
+*-- 21 October 2016 --*
+###Updates
+
+* Changed grid hover from jQuery hover to css hover. First hover item color change issue resolved.
+* Maintained 3 media queries for better readability of code
+* DRY javascript code from 600+ lines to 300~ lines
+* Not implementing LocalStorage or SessionStorage
+* Will implement Socket.io for TicTacToe project instead
+* Links on home page will redirect to githubpages instead of hosting project on same url
+
+---
+
+---
+
+*-- 14 October 2016 --*
+
 ###Goal
 A two player game which allows for customisable tokens and board size.
 I picked a tile based game system that was simpler than checkers
@@ -67,7 +87,4 @@ no need for getting element, and then using while loops. Effects are nice
 5. Use LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 6. Socket.io for remote play
 7. Find a solution to host the website for different projects. Currently have multiple copies of the Memotile folder: on the project repo and in a folder in the website repo.
-
-
-
 

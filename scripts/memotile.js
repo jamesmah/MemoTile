@@ -1,4 +1,3 @@
-$('html').css('cursor', 'url(./images/mouse-red.png), auto'); // Nice cursor!
 var timeOuts = []; // Keep track of the timeOuts used for effects
 
  // Game information
@@ -21,15 +20,15 @@ var grid = {array: [], // 1D array
 var players = [new newPlayer('red'), new newPlayer('blue')];
 function newPlayer(color) {
   this.color = color;
-  this.character = 1; // Initial pokemon
+  this.selectedCharacter = 1; // Initial pokemon
   this.score = 0;
   this.tilesMax = 0;
-  this.tilesLeft = 0;
+  this.tilesToGo = 0;
 }
 
 // Update the size of the initial pokemon in the menu
 $.each(players, function(i, player) {
-  $('#characters-' + player.color + ' > img:eq(' + player.character + ')')
+  $('#characters-' + player.color + ' > img:eq(' + player.selectedCharacter + ')')
     .toggleClass('scale-160 hover-scale-160');
 });
 
@@ -58,10 +57,10 @@ $('#display-win').click(function() {
     grid.opened = [];
     grid.array = initArray(game.pStartColorId, game.pNextColorId, players[game.otherColorId].tilesMax);
     placeGridTiles(grid.array, grid.length, players);
-    $('.tilesleft > img').remove();
-    displayTilesLeft(players[0]);
-    displayTilesLeft(players[1]);
-    $('#display-grid > div > img, .tilesleft').hide().fadeIn();
+    $('.tilestogo > img').remove();
+    displayTilesToGo(players[0]);
+    displayTilesToGo(players[1]);
+    $('#display-grid > div > img, .tilestogo').hide().fadeIn();
     setTimeout(function() {
       $('#display-grid > div > img').fadeOut();
     }, grid.length * grid.length * grid.length * 20 + 100);
@@ -81,12 +80,12 @@ $('.characters img').click(function () {
   var colorId = $('.characters').index($(event.target).closest('.characters'));
   var tileNumber = $('#characters-' + players[colorId].color + ' > img').index($(event.target));
 
-  if (tileNumber !== players[colorId].character) {
+  if (tileNumber !== players[colorId].selectedCharacter) {
     $('#characters-' + players[colorId].color + ' > img:eq(' + tileNumber + ')')
       .toggleClass('scale-160 hover-scale-160');
-    $('#characters-' + players[colorId].color + ' > img:eq(' + players[colorId].character + ')')
+    $('#characters-' + players[colorId].color + ' > img:eq(' + players[colorId].selectedCharacter + ')')
       .toggleClass('scale-160 hover-scale-160');
-    players[colorId].character = tileNumber;
+    players[colorId].selectedCharacter = tileNumber;
     updateCharImg(colorId);
   }
 });
@@ -97,7 +96,7 @@ $('#button-score').click(function() {
 });
 
 $('.gridsize').click(function() {
-  $('.tilesleft > img').fadeOut();
+  $('.tilestogo > img').fadeOut();
   randTurnStart();
   $('html').css('cursor', 'url(./images/mouse-' + players[game.turnColorId].color + '.png), auto');
   var gridId = $('.gridsize').index($(event.target).closest('.gridsize'));
@@ -124,10 +123,10 @@ function randTurnStart() {
 function initTilesMax() {
   $.each(players, function(i, player) {
     player.tilesMax = Math.floor(grid.size/2);
-    player.tilesLeft = player.tilesMax;
+    player.tilesToGo = player.tilesMax;
   });
   players[game.pStartColorId].tilesMax += grid.size % 2;
-  players[game.pStartColorId].tilesLeft = players[game.pStartColorId].tilesMax;
+  players[game.pStartColorId].tilesToGo = players[game.pStartColorId].tilesMax;
 }
 
 // Initialise new game, show starting screen
@@ -155,9 +154,9 @@ function initGridButtons() {
       $(this).removeClass('hover-red hover-blue');
       $(this).find('img').fadeIn().addClass('hopping');
       grid.opened[tileNumber] = true;
-      $('#tilesleft-' + player.color + ' > img:eq(' + (player.tilesLeft - 1) + ')').fadeOut();
+      $('#tilestogo-' + player.color + ' > img:eq(' + (player.tilesToGo - 1) + ')').fadeOut();
       // Player wins if there are no tiles left
-      if ( --player.tilesLeft === 0) {
+      if ( --player.tilesToGo === 0) {
         winRound(player, colorId);
       }
       // Switch player if opened the wrong grid
@@ -200,11 +199,11 @@ function displaySwitchturn() {
 }
 
 // Display right aside section
-function displayTilesLeft(player) {
-  for (var i = 0; i < player.tilesLeft; i++) {
+function displayTilesToGo(player) {
+  for (var i = 0; i < player.tilesToGo; i++) {
     var $newImg = $('<img>');
-    $newImg.attr("src","./images/" + player.color + player.character + ".svg");
-    $('#tilesleft-' + player.color).append($newImg);
+    $newImg.attr("src","./images/" + player.color + player.selectedCharacter + ".svg");
+    $('#tilestogo-' + player.color).append($newImg);
   }
 }
 
@@ -232,7 +231,7 @@ function placeGridTiles(array, gridLength, players) {
     var $newTileDiv = $('<div><img></div>');
     $newTileDiv.find('img').hide();
     if (players !== null) {
-      $newTileDiv.find('img').attr("src","./images/" + players[array[i]].color + players[array[i]].character + ".svg");
+      $newTileDiv.find('img').attr("src","./images/" + players[array[i]].color + players[array[i]].selectedCharacter + ".svg");
     }
     $('#display-grid').append($newTileDiv);
   }
@@ -285,12 +284,18 @@ function displayScore(colorId, score) {
 function updateCharImg(colorId) {
   // colorId is 0(red) or 1(blue)
   // Update right aside imgs
-  $('.tilesleft:eq(' + colorId + ') > img').attr('src','./images/' + players[colorId].color + players[colorId].character + '.svg');
+  var $img = $('.tilestogo:eq(' + colorId + ') > img');
+  var playerColor = players[colorId].color;
+  var characterId = players[colorId].selectedCharacter;
+  $img.attr('src','./images/' + playerColor + characterId + '.svg');
 
   // Update display grid images
   for(var i = 0; i < grid.size; i++){
     if ( grid.array[i] === colorId) {
-      $( '#display-grid img:eq(' + i + ')' ).attr("src","./images/" + players[colorId].color + players[colorId].character + ".svg");
+      $img = $( '#display-grid img:eq(' + i + ')' );
+      playerColor = players[colorId].color;
+      characterId = players[colorId].selectedCharacter;
+      $img.attr('src','./images/' + playerColor + characterId + '.svg');
     }
   }
 }
