@@ -76,6 +76,10 @@ $('#button-menu').click(function() {
   toggleDisplayMenu();
 });
 
+$('#button-howtoplay').click(function() {
+  $('#display-howtoplay').slideDown();
+});
+
 $('.characters img').click(function () {
   var colorId = $('.characters').index($(event.target).closest('.characters'));
   var tileNumber = $('#characters-' + players[colorId].color + ' > img').index($(event.target));
@@ -108,6 +112,10 @@ $('.gridsize').click(function() {
   placeGridTiles(grid.array, grid.length, null);
   newGame();
   game.firstRound = false;
+});
+
+$('#display-howtoplay').click(function() {
+  $('#display-howtoplay').slideUp();
 });
 
 // Place a random starting player for a new game mode

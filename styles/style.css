@@ -109,9 +109,16 @@ div#display-menu {
   border-radius: 4%;
   background-color: rgba(100, 200, 100, 0.8);
 }
+h5#howtoplay {
+  margin: 0;
+  margin-top: 6%;
+  font-size: 3vh;
+}
 h1#game-title {
-  margin: 5% 0 0 0;
-  padding: 2%;
+  margin: 0;
+  margin-top: -2%;
+  margin-bottom: 2%;
+  padding: 0;
   font-size: 10vh;
   font-weight: normal;
 }
@@ -165,6 +172,50 @@ div.gridsize > img {
   left: 0;
   opacity: 0.8;
   display: none;
+}
+
+/*DISPLAY - MENU*/
+div#display-howtoplay {
+  margin: 7%;
+  width: 86%;
+  height: 86%;
+  border-radius: 4%;
+  background-color: rgba(100, 100, 200, .9);
+  display: none;
+}
+
+div#display-howtoplay > h3 {
+  font-size: 4vh;
+  margin-bottom: 3%;
+  color: rgb(240,240,240);
+  -webkit-filter: drop-shadow(1px 1px rgba(50,50,50,1)) 
+                  drop-shadow(-1px 1px rgba(50,50,50,1))
+                  drop-shadow(1px -1px rgba(50,50,50,1))
+                  drop-shadow(-1px -1px rgba(50,50,50,1));
+}
+
+div#display-howtoplay > ol, div#display-howtoplay > ul {
+  padding-left: 10%;
+  padding-right: 5%;
+  margin: 2%;
+}
+
+div#display-howtoplay li {
+  font-family: verdana;
+  font-size: 2.7vh;
+  margin: .5vh 0 .5vh 0;
+  text-align: left;
+  color: rgb(240,240,240);
+  -webkit-filter: drop-shadow(1px 1px rgba(50,50,50,1)) 
+                  drop-shadow(-1px 1px rgba(50,50,50,1))
+                  drop-shadow(1px -1px rgba(50,50,50,1))
+                  drop-shadow(-1px -1px rgba(50,50,50,1));
+}
+
+#closemenu {
+  margin-top: 0%;
+  font-size: 4vh;
+  color: black;
 }
 
 /*ASIDE LEFT*/
@@ -281,6 +332,9 @@ div.tilestogo > img {
   div.gridsize > div, div.score {font-size: calc(10vw * 5 / 8);}
   h2#player-wins {font-size: calc(7vw * 5 / 8);}
   h2#clicktostart {font-size: calc(5vw * 5 / 8);}
+  div#display-howtoplay > h3, #closemenu {font-size: calc(4vw * 5 / 8);}
+  h5#howtoplay {font-size: calc(3vw * 5 / 8);}
+  div#display-howtoplay li {font-size: calc(2.7vw * 5 / 8);}
   div.select > div {border-width: calc(1vw * 5 / 8);}
   div.score {right: calc(5.5vw * 5 / 8);}
   div.tilestogo > img {width: calc(8vw * 5 / 8);}
@@ -290,6 +344,9 @@ div.tilestogo > img {
   div.gridsize > div, div.score {font-size: calc(10vh * 5 / 8);}
   h2#player-wins {font-size: calc(7vh * 5 / 8);}
   h2#clicktostart {font-size: calc(5vh * 5 / 8);}
+  div#display-howtoplay > h3, #closemenu {font-size: calc(4vh * 5 / 8);}
+  h5#howtoplay {font-size: calc(3vh * 5 / 8);}
+  div#display-howtoplay li {font-size: calc(2.7vh * 5 / 8);}
   div.select > div {border-width: calc(1vh * 5 / 8);}
 }
 @media screen and (max-aspect-ratio: 5/8) {
@@ -297,6 +354,9 @@ div.tilestogo > img {
   div.gridsize > div, div.score {font-size: 10vw;}
   h2#player-wins {font-size: 7vw;}
   h2#clicktostart {font-size: 5vw;}
+  div#display-howtoplay > h3, #closemenu {font-size: 4vw;}
+  h5#howtoplay {font-size: 3vw;}
+  div#display-howtoplay li {font-size: 2.7vw;}
   div.select > div {border-width: 1vw;}
 }
 
