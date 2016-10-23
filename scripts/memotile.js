@@ -26,6 +26,32 @@ function newPlayer(color) {
   this.tilesToGo = 0;
 }
 
+// Reload score from localStorage
+if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+  if (localStorage.memotileScoreRed !== undefined) {
+    players[0].score = Number(localStorage.memotileScoreRed);
+    $('#score-red').text(localStorage.memotileScoreRed);
+    $('div.score').show();
+    $('img.button').show();
+  }
+  if (localStorage.memotileScoreBlue !== undefined) {
+    players[1].score = Number(localStorage.memotileScoreBlue);
+    $('#score-blue').text(localStorage.memotileScoreBlue);
+    $('div.score').show();
+    $('img.button').show();
+  }
+}
+
+function saveLocalScore(colorId, score) {
+  if (colorId === 0) {
+    localStorage.memotileScoreRed = score;
+  }
+  else if (colorId === 1) {
+    localStorage.memotileScoreBlue = score;
+  }
+}
+
 // Update the size of the initial pokemon in the menu
 $.each(players, function(i, player) {
   $('#characters-' + player.color + ' > img:eq(' + player.selectedCharacter + ')')
@@ -284,6 +310,7 @@ function displayScore(colorId, score) {
   scoreDIV.slideUp(500);
   setTimeout(function() {
     players[colorId].score = score; // Global
+    saveLocalScore(colorId, score);
     scoreDIV.text(score).slideDown(500);
   },500);
 }
