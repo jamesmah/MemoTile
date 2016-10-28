@@ -32,14 +32,10 @@ if (typeof(Storage) !== "undefined") {
   if (localStorage.memotileScoreRed !== undefined) {
     players[0].score = Number(localStorage.memotileScoreRed);
     $('#score-red').text(localStorage.memotileScoreRed);
-    $('div.score').show();
-    $('img.button').show();
   }
   if (localStorage.memotileScoreBlue !== undefined) {
     players[1].score = Number(localStorage.memotileScoreBlue);
     $('#score-blue').text(localStorage.memotileScoreBlue);
-    $('div.score').show();
-    $('img.button').show();
   }
 }
 
