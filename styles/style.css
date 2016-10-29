@@ -142,9 +142,10 @@ div#characters-red {border-color: rgba(255, 0, 0, .9);}
 div#characters-blue {border-color: rgba(0, 0, 255, .9);}
 div.characters > img {
   float: left;
-  width: calc(100% / 3);
-  height: calc(100% / 3);
-  padding: 5%;
+  width: calc(82% / 3);
+  height: calc(82% / 3);
+  margin: 3%;
+  padding: 2%;
   box-sizing: border-box;
 }
 div#select-gridsize {
