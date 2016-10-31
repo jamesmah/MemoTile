@@ -1,5 +1,5 @@
 # MemoTile
-[https://jamesmah.github.io/memotile/](https://jamesmah.github.io/memotile/)
+[http://memotile.mahjam.es](http://memotile.mahjam.es)
 
 ---
 
