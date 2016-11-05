@@ -80,10 +80,6 @@ h2 {
   position: absolute;
   margin: 0;
   width: 100%;
-  -webkit-filter: drop-shadow(1px 1px white) 
-              drop-shadow(-1px 1px white)
-              drop-shadow(1px -1px white)
-              drop-shadow(-1px -1px white);
 }
 h2#player-turn, h2#player-start {
   transform: translate(0, -50%);
