@@ -2,9 +2,8 @@
 [http://memotile.mahjam.es](http://memotile.mahjam.es)
 
 ---
-
 *-- 21 October 2016 --*
-###Updates
+## Updates
 
 * Changed grid hover from jQuery hover to css hover. First hover item color change issue resolved.
 * Maintained 3 media queries for better readability of code
@@ -14,12 +13,9 @@
 * Links on home page will redirect to githubpages instead of hosting project on same url
 
 ---
-
----
-
 *-- 14 October 2016 --*
 
-###Goal
+## Goal
 A two player game which allows for customisable tokens and board size.
 I picked a tile based game system that was simpler than checkers
 but different from tictactoe and would make more sense to scale the grid size.
@@ -27,12 +23,12 @@ I was interested in getting a better understanding of jQuery for DOM manipulatio
 
 ---
 
-###Technologies used
+## Technologies used
 HTML, CSS, Javascript, jQuery (& jQuery effects!)
 
 ---
 
-###Approach taken:
+## Approach taken:
 1. Built html document
 2. Built the layout first (lots of divs, responsive) ([reponsive website ref](http://games.cdn.famobi.com/html5games/0/1010-animals/7-2161a5/?fg_domain=play.famobi.com&fg_aid=A1000-1&fg_uid=6f19250d-f8f8-4bf0-9edc-b28ef81a86ec&fg_pid=4638e320-4444-4514-81c4-d80a8c662371&fg_beat=110#_ga=1.189308334.447018087.1476148857))
   * Used square images, coloured divs
@@ -51,21 +47,15 @@ HTML, CSS, Javascript, jQuery (& jQuery effects!)
 8. Added icon, audio
 9. Debugging & touch up (added the crown!)
   * There's still some bugs in the mouse transition from red to blue and back
-
----
-
-###ANGRY bits
-
+  
+## ANGRY bits
 1. Had some trouble with widths updating according to the height of the page. Was using % at first, but changed to vh and calc
 * Would be useful if there was an aspect ratio lock for divs
 2. Hover does not work on the first item on the grid when game initiates
 3. Hovering doesn't really work well on mobile. Images get stuck
 4. Not all media queries really work with safari (it seems)
 
----
-
-###Lessons learned
-
+## Lessons learned
 1. **PLAN MORE**
   * Map out all the buttons and find out which variables and functions will be used
   * I have multiple instances of similar functions that does slightly different things because the first version of the function does a bit more than what is required
@@ -74,10 +64,7 @@ HTML, CSS, Javascript, jQuery (& jQuery effects!)
 3. jQuery really helped shorten the amount of code,
 no need for getting element, and then using while loops. Effects are nice
 
----
-
-### Future works
-
+## Future works
 1. Probably implement max() function in CSS instead of 2 extra media queries
 2. DRY the javascript document.
 3. DRY the javascript document.. 
@@ -85,4 +72,3 @@ no need for getting element, and then using while loops. Effects are nice
 5. Use LocalStorage or SessionStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 6. Socket.io for remote play
 7. Find a solution to host the website for different projects. Currently have multiple copies of the Memotile folder: on the project repo and in a folder in the website repo.
-
