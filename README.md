@@ -6,6 +6,11 @@ HTML, CSS, Javascript, jQuery (& jQuery effects!)
 ---
 *-- 21 October 2016 --*
 ## Updates
+* Added LocalStorage to save players scores
+
+---
+*-- 21 October 2016 --*
+## Updates
 
 * Changed grid hover from jQuery hover to css hover. First hover item color change issue resolved.
 * Maintained 3 media queries for better readability of code
