@@ -4,7 +4,7 @@
 HTML, CSS, Javascript, jQuery (& jQuery effects!)
 
 ---
-*-- 21 October 2016 --*
+*-- 23 October 2016 --*
 ## Updates
 * Added LocalStorage to save players scores
 
