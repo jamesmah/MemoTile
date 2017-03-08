@@ -1,7 +1,11 @@
 # MemoTile
-[http://memotile.mahjam.es](http://memotile.mahjam.es)
 ## Technologies used
 HTML, CSS, Javascript, jQuery (& jQuery effects!)
+
+---
+*-- 23 October 2016 --*
+## Updates
+* Added LocalStorage to save players scores
 
 ---
 *-- 21 October 2016 --*
