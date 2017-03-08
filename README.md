@@ -1,5 +1,4 @@
 # MemoTile
-[http://memotile.mahjam.es](http://memotile.mahjam.es)
 ## Technologies used
 HTML, CSS, Javascript, jQuery (& jQuery effects!)
 
