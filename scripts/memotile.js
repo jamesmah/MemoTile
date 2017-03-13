@@ -96,6 +96,7 @@ $('#display-win').click(function() {
 // Open and close menu
 $('#button-menu').click(function() {
   toggleDisplayMenu();
+  $('#display-howtoplay').slideUp();
 });
 
 $('#button-howtoplay').click(function() {
