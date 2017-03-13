@@ -180,7 +180,6 @@ div#display-howtoplay {
   background-color: rgba(100, 100, 200, .9);
   display: none;
 }
-
 div#display-howtoplay > h3 {
   font-size: 4vh;
   margin-bottom: 3%;
@@ -190,13 +189,11 @@ div#display-howtoplay > h3 {
                   drop-shadow(1px -1px rgba(50,50,50,1))
                   drop-shadow(-1px -1px rgba(50,50,50,1));
 }
-
 div#display-howtoplay > ol, div#display-howtoplay > ul {
   padding-left: 10%;
   padding-right: 5%;
   margin: 2%;
 }
-
 div#display-howtoplay li {
   font-family: verdana;
   font-size: 2.7vh;
@@ -208,7 +205,6 @@ div#display-howtoplay li {
                   drop-shadow(1px -1px rgba(50,50,50,1))
                   drop-shadow(-1px -1px rgba(50,50,50,1));
 }
-
 #closemenu {
   margin-top: 0%;
   font-size: 4vh;
@@ -234,10 +230,6 @@ div.score {
   right: 5.5vh;
   transform: translate(50%, 0);
   font-size: 10vh;
-  -webkit-filter: drop-shadow(1px 1px rgba(50,50,50,1)) 
-                  drop-shadow(-1px 1px rgba(50,50,50,1))
-                  drop-shadow(1px -1px rgba(50,50,50,1))
-                  drop-shadow(-1px -1px rgba(50,50,50,1));
   display: none;
 }
 div#score-red {
@@ -401,5 +393,20 @@ div.tilestogo > img {
   to {transform: translate(0, 0);}
 }
 
+.white-outline
+{
+    text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;  
+}
 
-
+.black-outline
+{
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;  
+}
